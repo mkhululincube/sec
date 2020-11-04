@@ -1,0 +1,206 @@
+.autocompleteWidth {
+	width: 100%;
+}
+.logoBar {
+	padding: 0px 0 20px 0
+}
+
+.topBar {
+    border-bottom: 1px solid transparent;
+    font-size: 12px;
+    padding: 0!important;
+    height: 35px;
+	margin: 0!important;
+}
+
+.ulReset {
+    padding-left: 0;
+   margin-top: 0;
+   margin-bottom: 0;
+	list-style: none;
+}
+
+a:hover, a:visited, a:link, a:active
+ {
+    text-decoration: none;
+}
+
+
+
+
+
+/* #Mega Menu Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+ 
+
+
+/* #Droppable Class Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.droppable {position: static;}
+.droppable > a:after {
+  	font-family: FontAwesome;
+  	font-size: 12px;
+  	padding-left: 6px;
+  	position: relative;
+  	top: -1px;
+}
+.droppable:hover .megaMenu {display: block;}
+
+
+
+/* #Browser Clearfix
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.cf:before,
+.cf:after {
+	content: " "; /* 1 */
+   display: table; /* 2 */
+}
+.cf:after {clear: both;}
+
+
+
+.logoBarLogo {
+	height: 50px;
+margin-left: 0px;
+}
+
+
+
+.lighterText {
+	color: #ABB0BE;
+  }
+  
+  .mainColorText {
+	color: #003644;
+  }
+  
+
+  .nav {
+	padding: 10px 0 30px 0;
+	color:#fff;
+	box-shadow: 2px 4px 3px 4px #f6f6f6;
+    background-color:#003644;
+    border-bottom: 1px solid transparent;
+	font-size: 12px;
+	margin-bottom: 23px;
+
+  }
+  .nav .navbarLeft {
+	float: left;
+  }
+  .nav .navbarRight {
+	float: right;
+  }
+  .nav ul li {
+	display: inline;
+	padding-right: 20px;
+  }
+  .nav ul li a {
+	color: #fff;
+	text-decoration: none;
+  }
+  .nav ul li a:hover {
+	color: #003644;
+	border:1px solid #fff;
+	color:#fff;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 15px;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+  }
+
+    
+  .badge {
+	background-color: #fff;
+	color:rgb(7,106,177);
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 1;
+	padding: 1px 3px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+  }
+
+  .cartIcon {
+	color: #515783;
+	font-size: 24px;
+	margin-right: 7px;
+	float: left;
+  }
+
+  .toggleCart {
+	  cursor: pointer;
+  }
+  
+  .showSideNav {
+	padding-left:8px !important;
+	margin-top: -5px;
+	font-size: 18px;
+	cursor: pointer;
+  }
+
+
+  .sideNav {
+	margin: 0px 0;
+    background: white;
+    box-shadow: 2px 5px 7px #f6f6f6;
+	width: 320px;
+	position: fixed;
+	z-index: 99999999;
+	left:0;
+	top:0;
+ 	padding: 0px;
+	height: 100vh;
+	text-align: left;
+	overflow-y: scroll;
+  }
+
+.closeSideNav {
+position: absolute;
+margin-left: 290px;
+top: 7px;
+cursor: pointer;
+font-size: 18px;
+text-align: right;
+  }
+
+  .sideNavHeader {
+	  background-color: #34495e;
+	  padding: 11px;
+	  font-size: 13px;
+	  text-align: left;
+	  font-weight: 700;
+	  cursor: pointer;
+   }
+   .sideNavHeader:hover {
+	background-color: #003644;  
+   }
+  .sideNavSubCategory {
+	color: #333;
+	 margin-left: 7px;
+	 border-left: 6px solid #f6f6f6;
+	 cursor: pointer;
+}
+.sideNavSubCategory > div {
+padding: 5px 5px 5px 5px ;
+}
+
+  .sideNavCategory{
+	color: #333;
+	 margin-left: 7px;
+	 font-size: 16px;
+	 padding: 9px;
+	 cursor: pointer;
+
+  }
+  .sideNavCategory > div {
+	padding: 5px 5px 5px 5px ;
+}
+
+.sideNavCategory:hover{
+	background-color: #f6f6f6;
+}
