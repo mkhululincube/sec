@@ -2,7 +2,9 @@
 	width: 100%;
 }
 .logoBar {
-	padding: 0px 0 20px 0
+	padding: 20px 0 20px 0;
+	margin-bottom: 40px;
+	background-color: #f6f6f6;
 }
 
 .topBar {
@@ -61,8 +63,9 @@ a:hover, a:visited, a:link, a:active
 
 
 .logoBarLogo {
-	height: 50px;
+height: 50px;
 margin-left: 0px;
+cursor: pointer;
 }
 
 
@@ -204,3 +207,83 @@ padding: 5px 5px 5px 5px ;
 .sideNavCategory:hover{
 	background-color: #f6f6f6;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.dropDown {
+	margin: 0px 0;
+    background: white;
+    box-shadow: 2px 5px 7px #e9e6e6;
+	position: absolute;
+	z-index: 99999999;
+	border-radius: 3px;
+	padding: 20px;
+  }
+
+
+  @media (min-width:700px) {
+	.dropDown {
+		right:200px;
+		width: 320px;
+	}	
+}
+
+
+@media (max-width:700px) {
+	.dropDown {
+		right:0px;
+		width: 100%;
+
+	}	
+}
+
+
+  .dropDown .dropDownHeader {
+	padding-bottom: 15px;
+  }
+  .dropDown .dropDownHeader .dropDownTotal {
+    float: right;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .dropDown:after {
+	bottom: 100%;
+	left: 89%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: white;
+	border-width: 8px;
+	margin-left: -8px;
+  }
+  
+  .button {
+	background: #0E5FBD;
+	color: white;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	display: block;
+	border-radius: 3px;
+	font-size: 16px;
+	margin: 25px 0 15px 0;
+  }
+  .button:hover {
+    background: #fff;
+    border: 1px solid #0E5FBD;
+    color:#0E5FBD
+  }
+   

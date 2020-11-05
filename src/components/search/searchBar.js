@@ -15,7 +15,7 @@ const SearchBar = () => {
 <Search />
 </Col>
 <Col md={4} xs={18}>
-<Link to="/dashboard"><span className={globalstyle.button}>Add Citizen <PlusCircleOutlined /></span></Link> 
+<Link to="/addCitizen"><span className={globalstyle.button}>Add Citizen <PlusCircleOutlined /></span></Link> 
 </Col>
 
 

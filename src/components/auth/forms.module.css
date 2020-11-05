@@ -33,8 +33,7 @@ border-radius: 5px;
 width: 100%;
 background-color: rgb(7,106,177);
 height: 50px;
-border-radius: 25px;
-
+color: #fff;
 }
 
 .formLabel {
@@ -50,7 +49,7 @@ border-radius: 25px;
 }
 
 .formText {
-    border-radius: 25px;
+    border-radius: 5px;
     height:50px;
     padding-left: 30px;
     font-size: 12px;

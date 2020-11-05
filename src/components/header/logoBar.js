@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Space, Col, Row } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
+
 import globalstyle from '../../style.module.css';
 import styles from './header.module.css';
 import ScreenSize from '../settings/screenSize';
 import logo from '../../assets/img/securrency-logo.png'
+import SearchBar from '../search/searchBar';
 
 const LogoBar = () => {
 const width = ScreenSize();
@@ -12,17 +15,14 @@ const width = ScreenSize();
 return (
  <div className={styles.logoBar}>  
 <div  className={globalstyle.container}>
-<Space direction="vertical" size="large">
 <Row>
-{ (width > 700) ? 
-<Col xs={0} sm={8} md={10}>
+ <Col xs={12} sm={18} md={20}>
     <Link to="/"><img className={styles.logoBarLogo} src={logo} /></Link>
-</Col> : null }
-<Col xs={24} sm={16} md={10}>
-g
+</Col>  
+<Col xs={12} sm={8} md={4}>
+<Link to="/addCitizen"><span className={globalstyle.button}>Add Citizen <PlusCircleOutlined /></span></Link> 
 </Col>
 </Row>
-</Space>
 </div>
 </div>
 );

@@ -20,10 +20,10 @@ return (
 <img src={logo} width="100px"/>
 </Col>
 <Col className="pull-right" sm={4} xs={7}>
-<div><a title="facebook" href="https://www.facebook.com/ecosazdotcom"><TwitterOutlined style={{color: "#fff"}} /></a>  &nbsp;  &nbsp; 
-<a title="twitter" href="https://twitter.com/ecosaz"><FacebookOutlined style={{color: "#fff"}}  /></a>   &nbsp;  &nbsp;   
-<a title="linkedin" href="https://www.linkedin.com/in/ecosaz-dotcom-996949146/"><InstagramOutlined style={{color: "#fff"}}  /> </a>   &nbsp;   &nbsp;
-<a title="linkedin" href="https://www.instagram.com/"><YoutubeOutlined style={{color: "#fff"}}  /> </a>   &nbsp;   &nbsp;
+<div><a title="facebook" href="#"><TwitterOutlined style={{color: "#fff"}} /></a>  &nbsp;  &nbsp; 
+<a title="twitter" href="#"><FacebookOutlined style={{color: "#fff"}}  /></a>   &nbsp;  &nbsp;   
+<a title="linkedin" href="#"><InstagramOutlined style={{color: "#fff"}}  /> </a>   &nbsp;   &nbsp;
+<a title="linkedin" href="#"><YoutubeOutlined style={{color: "#fff"}}  /> </a>   &nbsp;   &nbsp;
 
 </div>               
  </Col>
