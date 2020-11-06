@@ -3,38 +3,63 @@
     height: 100vh;
     overflow: hidden;
   }
-  
-  @media (max-width:700px) {
-      .loginContainer {
-          background-color: #fff;  
-      }  
-      
-      .loginForm {
-          margin: 10% 6% 6% 6%;
-  
-      }
-      
-  
+
+  .citizensInnerContainer {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
   }
+  
+  
+
+  .citizensPageContainer {
+    margin-top: 70px;
+    padding: 40px 0;
+    background-color: #8bc0c6;
+  }
+
+  .citizensListContainer {
+    padding: 3% 3% 5% 3%;
+    background-color: #fff;
+    border: 1px solid #003644;
+    border-radius: 5px;
+  }
+
   @media (min-width:700px) {
   
     .loginForm {
-        padding: 3% 3% 5% 3%;background-color: #fff;
+        padding: 3% 3% 5% 3%;
+        background-color: #fff;
         border: 1px solid #003644;
         border-radius: 5px;
     
     }
     .citizensContainer {
-        margin-top: 40px;
-        padding: 20px;
+        margin-top: 70px;
+        padding: 40px 0;
         background-color: #8bc0c6;
     }
+    .formText {
+        border-radius: 5px;
+        height:50px;
+        padding-left: 30px;
+        font-size: 12px;
+        width: 100%;
+        border: 1px solid #ddd;
+     }
     }
 
     @media (max-width:700px) {
+
+        .loginContainer {
+            background-color: #fff;  
+        }  
+
   
         .loginForm {
             padding: 3% 3% 5% 3%;
+            margin: 10% 6% 6% 6%;
+
             background-color: #fff;
             border: 1px solid #003644;        
         }
@@ -43,7 +68,17 @@
             padding: 0px;
             background-color: #8bc0c6;
         }
-        }
+
+        .formText {
+            border-radius: 5px;
+            height:50px;
+            padding-left: 30px;
+            width: 100%;
+            border: 1px solid #ddd;
+         }
+}
+
+
   
   .formBtn {
   border-radius: 5px;
@@ -65,23 +100,14 @@
       color: #333
   }
   
-  .formText {
-      border-radius: 5px;
-      height:50px;
-      padding-left: 30px;
-      font-size: 12px;
-      width: 100%;
-      border: 1px solid #ddd;
-   }
+
   
   .formText:focus {
       height: 50px;
       box-shadow: 0px 0px 0 #bcd5fc;
   }
   
-  .fformText:hover {
-      box-shadow: 0px 0px 30px #2E8B57;
-    }
+
   
     .formLogo {
       width:50%;
@@ -100,4 +126,28 @@
   font-size: 24px;
    }
 
+.citizenItemRow {
+    padding: 5px;
+    margin: 5px 0;
+}
 
+.citizensHeader {
+    background-color: #f6f6f6;
+    padding: 15px 6px;
+    font-weight: bold;
+}
+
+.instruction {
+    background-color: #f6f6f6;
+    padding: 15px 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+.instructionHeader {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.instruction > span {
+    font-weight: bold;
+}

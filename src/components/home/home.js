@@ -15,8 +15,8 @@ import SearchBar from '../search/searchBar';
 import Menu from '../menu/menu';
 import HeaderStatus from '../../containers/settings/headerStatus';
 import AddCitizen from '../citizen/addCitizen';
+import Citizen from '../citizen/citizen';
  
-const CitizenContainer = React.lazy(() => import('../../containers/citizen/citizenContainer'));
 
 function Home() {
 
@@ -26,27 +26,10 @@ HeaderStatus(true) ;
      
 return (
 <>
-{/* <Slider/>
-<Bar/> */}
-
-
-
 <div className={globalstyle.container}>
 
-{/* <SearchBar /> */}
-
-<Menu />
-
-
 </div>
-
-<Suspense fallback={
- <div className={globalstyle.loading}>loading ...
- </div>
-}>
-  <CitizenContainer />
-
-</Suspense>
+<Citizen />
 
 
 </>

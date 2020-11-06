@@ -1,0 +1,1 @@
+export const TESTNET_URL = 'https://ropsten.etherscan.io/';

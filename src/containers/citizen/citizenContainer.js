@@ -1,42 +1,95 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Spin, Alert, Space } from 'antd';
+
 import Web3 from 'web3'
+import { Citizens } from '../../actions/actions';
+import CitizenView from '../../components/citizen/citizenView';
 import { CITIZENS_ADDRESS, CITIZENS_ABI } from '../../config/citizens'
-import Citizen from '../../components/citizen/citizen';
+import { TESTNET_URL } from '../../config/config';
 
-const testnet = 'https://ropsten.etherscan.io/';
-// const walletAddress = '0x8690F1feff62008A396B31c2C3f380bD0Ca6d8b8';
+const CitizenContainer = (props) => {
 
-const CitizenContainer = () => {
-
-    const [citizen, setCitizen]  = useState({}); 
-    const [citizenDetails, setCitizenDetails]  = useState({}); 
+const dispatch = useDispatch();
+   
+const [citizenNotes, setCitizenNotes]  = useState({}); 
+const [totalCitizens, setTotalCitizens]  = useState(0); 
+const [perPage, setPerPage]  = useState(5); 
+const [currPage, setCurrPage]  = useState(0); 
 
 useEffect(()=>{
-    const fetchCitizen = async () => {
 
-    //const web3 = new Web3(new Web3.providers.HttpProvider(testnet));
-
-    const web3 = new Web3(Web3.givenProvider || testnet)
-    //this.setState({ account: accounts[0] })
+const fetchCitizens = async () => {
+    const web3 = new Web3(Web3.givenProvider || TESTNET_URL)
     const citizensList = new web3.eth.Contract(CITIZENS_ABI, CITIZENS_ADDRESS)
-    setCitizen({ citizensList })
-
-      const citizenD = await citizensList.methods.getNoteByCitizenId(32).call()
-      setCitizenDetails(citizenD)
-
+    
+    citizensList.getPastEvents(
+        'AllEvents',
+        {
+          filter: {myIndexedParam: [0,0]},
+          fromBlock: 8901929,
+          toBlock: 'latest'
+        },
+        (err, citizens) => {
+            // setCitizensList(citizens)
+            dispatch(Citizens(citizens));
+            setTotalCitizens(citizens)
+            }
+      )
     }
-    fetchCitizen()
+    fetchCitizens();
 
 },[])
-console.log("citizens", citizen)
-console.log("citizenDetails", citizenDetails)
 
 
+const selector = useSelector(state=>state.Citizens);
+  
+console.log(selector.length/5 )
+console.log(totalCitizens.length)
+
+
+console.log("citizens", selector[0])
+console.log("citizenDetails", citizenNotes)
+
+
+const pageNumbers = [];
+for (let i = 1; i <= Math.ceil(totalCitizens.length / perPage); i++) {
+  pageNumbers.push(i);
+}
+
+const renderPageNumbers = pageNumbers.map(number => {
     return (
-        <>
-            <Citizen citizens={citizen} /> 
-        </>
+      <li
+        key={number}
+        id={number}
+      
+      >
+        {number}
+      </li>
     );
+  });
+
+return (
+<>
+<Suspense fallback={
+<Space>
+<Spin tip="Loading...">
+    <Alert
+      message="Alert message title"
+      description="Further details about the context of this alert."
+      type="info"
+    />
+  </Spin>
+</Space>}>
+<CitizenView citizens={selector}  />
+
+</Suspense>  
+
+<ul id="page-numbers">
+          {renderPageNumbers}
+        </ul>
+</>
+);
 };
 
 export default CitizenContainer;

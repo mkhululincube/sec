@@ -11,8 +11,7 @@ import logo from '../../assets/img/securrency-white.png';
 const Footer = () => {
 return (
 <div>
-<div className={style.extra}>
-
+ 
 <div className={style.footer2}>
 <div  className={globalstyle.container}>   
 <Row>
@@ -30,8 +29,7 @@ return (
 </Row> 
 </div>    
 </div>    
-</div>    
-</div>
+ </div>
 );
 };
 

@@ -38,8 +38,8 @@ const dispatch = useDispatch();
 
 HeaderStatus(false) ;
 
-const { control, register, handleSubmit, errors, setValue } = useForm();
-const emailError = errors.email && "Enter your email address";
+const {  register, handleSubmit, errors } = useForm();
+//const emailError = errors.email && "Enter your email address";
 
 
 
@@ -49,6 +49,7 @@ const onSubmit = data => {
      localStorage.setItem('citizenMicroFrontend-token', JSON.stringify({
        loggedIn: true,
        token: data,
+       username: data.username
      }));
      props.history.push('/home')
 }
@@ -71,6 +72,7 @@ return (
     {errors.name && errors.message}
 <input
         name={item.name}
+        type={item.type}
         className={styles.formText}
         ref={register({
           required: item.required,

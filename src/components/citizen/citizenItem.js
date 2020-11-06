@@ -1,17 +1,74 @@
-import React from 'react';
-import { Card } from 'antd';
-const { Meta } = Card;
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Col, Row, Button, Modal } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import style from './citizen.module.css';
 
-const CitizenItem = () => {
-    return (
-        <Card
-        hoverable
-        style={{ width: 240, borderRadius: "20px" }}
-        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-      >
-        <Meta title="Europe Street beat" description="www.instagram.com" />
-      </Card>
-    );
+const CitizenItem = (props) => {
+const citizenItem = props.citizenItem;
+
+
+// const [showModal, setShowModal] = useState(false);
+
+// showModal = () => {
+//   this.setState({
+//     visible: true,
+//   });
+// };
+
+// handleOk = e => {
+//   console.log(e);
+//   this.setState({
+//     visible: false,
+//   });
+// };
+
+// handleCancel = e => {
+//   console.log(e);
+//   this.setState({
+//     visible: false,
+//   });
+// };
+
+ const ethLink = "https://ropsten.etherscan.io/tx/"+citizenItem.transactionHash;
+return (
+<>
+<div className={style.citizenItemRow}>
+<Row>
+<Col md={1} xs={5}><UserOutlined /> {citizenItem.returnValues.id}</Col>
+<Col md={2} xs={5}> {citizenItem.returnValues.name}</Col>
+<Col md={1} xs={2}>{citizenItem.returnValues.age}</Col>
+<Col md={14} xs={5}>{citizenItem.returnValues.city} </Col>
+<Col md={3} xs={3}>
+<Link to={`citizenDetails/${citizenItem.returnValues.id}`}><Button type="primary">View Notes</Button>
+</Link>
+</Col>
+<Col md={3} xs={5}><a target="_blank" href={ethLink}>View txHash</a> </Col>
+
+</Row>
+
+
+{/* 
+
+<Button type="primary" onClick={setShowModal(true)}>
+          Open Modal
+        </Button>
+        <Modal
+          title="Basic Modal"
+          visible={showModal}
+        //   onOk={this.handleOk}
+        //   onCancel={this.handleCancel}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+</Modal> */}
+
+
+
+</div>
+</>
+);
 };
 
 export default CitizenItem;

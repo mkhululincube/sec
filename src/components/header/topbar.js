@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import styles from './header.module.css';
 import globalstyle from '../../style.module.css';
-import logo from '../../assets/img/securrency-logo.png';
-import cx from 'classnames'
 import ScreenSize from '../settings/screenSize';
 import Dropdown from './dropdown';
 
 
 const Topbar = (props) => {
-
-     const token = localStorage.getItem('citizenMicroFrontend-token');
+     const history = useHistory();
+     // JSON.parse(localStorage.getItem('citizenMicroFrontend-token')).username
 
      const [ visibility, setVisible ] = useState(false);
      const [ placement ] = useState('left');
@@ -24,8 +22,14 @@ const Topbar = (props) => {
           setVisible(false);
      };
    
+   const logoutHandler =() => {
+     localStorage.removeItem("citizenMicroFrontend-token");
+     if(localStorage.getItem("citizenMicroFrontend-token") === null){
+          history.push('/')
+     }
 
-
+}
+  
 
 const width = ScreenSize();
 
@@ -35,23 +39,24 @@ return (
 <>
 <div className={styles.nav} >
 <div className={globalstyle.container}>
-<span className={ cx(styles.showSideNav, styles.navbarLeft) } > 
+
+{/* <span className={ cx(styles.showSideNav, styles.navbarLeft) } > 
 
 Test
-</span>
-
+</span> */}
 
  
+ 
     <ul className={styles.navbarRight}>
-     <li onClick={()=>setDropdown(!showDropdown)} className={styles.toggleCart}>   
-   Mkhululi <SettingOutlined />
+     <li onClick={()=>setDropdown(!showDropdown)}  className={styles.mousePointer}>   
+   Welcome <SettingOutlined />
 </li>
-<li><Link to="/logout"><LogoutOutlined /></Link></li>
+<li><span className={styles.mousePointer} onClick={logoutHandler}><LogoutOutlined /></span></li>
     </ul> 
 
   </div>
  </div>
- { showDropdown ? <Dropdown /> : null }
+ {/* { showDropdown ? <Dropdown /> : null } */}
   </>
 );
 };

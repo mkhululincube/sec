@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 
-import CitizenItem from './citizenItem';
 import style from './citizen.module.css'
 import globalstyle from '../../style.module.css'
 import { Col, Row } from 'antd';
 import AddCitizen from './addCitizen';
+import Instructions from './instructions';
+
+
 
 const Citizen = (props) => {
 
-const [showAddCitizen, setShowAddCitizen] = useState(false);
+
+
+
+//const [showAddCitizen, setShowAddCitizen] = useState(false);
 
 return (
-        <div className={style.citizensContainer}>
-        <div className={globalstyle.container}>      
-<Row>
-<Col md={12} xs={24}>
-<CitizenItem />
-</Col>
+<div className={style.citizensContainer}>
+<div className={globalstyle.container}>      
+<div className={style.citizensInnerContainer}>      
+<Row gutter={[24]}>
 <Col md={12} xs={24}>
 
+<Instructions />
+
+
+</Col>
+<Col md={12} xs={24}> 
 <motion.div
   initial={{ scale: 0 }}
   animate={{ rotate: 360, scale: 1 }}
@@ -31,11 +39,12 @@ return (
 >
 <AddCitizen />
 </motion.div>
-            </Col>
-            </Row>
-         </div>
-        </div>
-    );
+</Col>
+</Row>
+</div>
+</div>
+</div>
+);
 };
 
 export default Citizen;

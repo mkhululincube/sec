@@ -1,7 +1,8 @@
 import {
     SCREEN_SIZE,
     SHOW_HEADER,
-    ADMIN_LOGGED_IN
+    ADMIN_LOGGED_IN,
+    CITIZENS
   } from "./actionTypes";
   
   export const ScreenSize = size => ({
@@ -17,6 +18,11 @@ import {
   export const AdminLoggedIn = (token) => ({
     type: ADMIN_LOGGED_IN,
     payload: token
+  })
+  
+  export const Citizens = (citizensList) => ({
+    type: CITIZENS,
+    payload: citizensList
   })
   
   
