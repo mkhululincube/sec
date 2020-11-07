@@ -1,4 +1,4 @@
-## Citizen Ethereum powered application
+## Citizen Dapp -  Powered by Ethereum
 
 Demo URL : https://securrency-int.herokuapp.com/
 
