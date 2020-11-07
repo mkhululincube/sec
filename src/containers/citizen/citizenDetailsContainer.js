@@ -6,8 +6,10 @@ import { TESTNET_URL } from '../../config/config';
 import CitizenDetails from '../../components/citizen/citizenDetails';
 
 const CitizenDetailsContainer = (props) => {
-const citizenId = props.match.params.citizenId;
+// const citizenId = props.match.params.citizenId;
 //const [citizensList, setCitizensList]  = useState([]); 
+ const citizenId = props.citizenId;
+
 const [citizenNotes, setCitizenNotes]  = useState([]); 
 // const numItems = 5;
 // const initialBlock = 12;
