@@ -31,7 +31,7 @@ return (
                     </Row>
                 </div>
         {
-        citizensList.map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
+        citizensList.slice(0,5).map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
         }
         <Pagination defaultCurrent={1} total={43} pageSize={5} onChange={()=>(alert('hello'))} /> 
         </div>
