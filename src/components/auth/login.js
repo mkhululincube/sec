@@ -39,7 +39,6 @@ const dispatch = useDispatch();
 HeaderStatus(false) ;
 
 const {  register, handleSubmit, errors } = useForm();
-//const emailError = errors.email && "Enter your email address";
 
 
 
