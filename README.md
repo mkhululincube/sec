@@ -214,5 +214,74 @@ Check on the global store if metamask is set
 ![alt text](https://github.com/mkhululincube/sec/blob/main/screenshots/notes.png)
 
 
+# DEVOPS 
+
+#### CI/CD Implemented Using Heroku
+
+Application hosted on heroku
+
+Heroku is linked to application codebase on github repo https://github.com/mkhululincube/sec/
+
+## Automated deployment is setup on heroku 
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450713-5a414e00-2158-11eb-868d-aedc0990325d.png)
+
+
+## If automated tests fail deploymentbalso fails
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450775-008d5380-2159-11eb-8538-e65a4d92e8e0.png)
+
+## Email sent to registered account
+
+![alt text](images.githubusercontent.com/16665636/98450742-ae4c3280-2158-11eb-91b4-fcae0c68f510.png)
+
+
+## If automated tests pass deployment passes
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450839-90cb9880-2159-11eb-91fd-a6eac6b064dd.png)
+
+## Our docker image is also updated if our test passes
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450886-046da580-215a-11eb-9da3-25b8042ea7d8.png)
+
+
+
+# Docker Setup
+
+## Build Image from Dockerfile or pull image from dockerhub
+
+    docker pull mkhululincube/citizen
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450968-ed7b8300-215a-11eb-8621-39d14288c428.png)
+
+## List images to see if the image is downloaded
+
+    docker images
+
+![alt text](https://user-images.githubusercontent.com/16665636/98450997-4814df00-215b-11eb-8761-24c99e007785.png)
+
+## Spin up the image to create a container and map the port
+
+    docker run --name citizen -p 4680:3000 -d mkhululi/citizen
+
+## List containers to see if the image is downloaded
+
+    docker ps
+    
+![alt text](https://user-images.githubusercontent.com/16665636/98451128-6e874a00-215c-11eb-944a-7b2b43b6ba7a.png)
+    
+## Get docker engine ip
+
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' imageNameOrID
+
+## Using the IP Address, add the ip on the url and the configured port
+
+😄😄 Happy Programming !!
+
+
+
+
+
+
 
 
