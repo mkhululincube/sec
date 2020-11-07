@@ -93,6 +93,7 @@ return (
 <input
         type={item.type}
         name={item.name}
+        style={{fontSize:"16px"}}
         className={styles.formText}
         ref={register({
           required: item.required,

@@ -16,7 +16,7 @@ return (
             <Divider>List of citizens</Divider>
                 <div className={style.citizensHeader}>
                     <Row>
-                        <Col md={1} xs={2}></Col>
+                        <Col md={1} xs={2}>Id</Col>
                         <Col md={2} xs={5}>Name</Col>
                         <Col md={1} xs={2}>Age</Col>
                         <Col md={14} xs={5}>City</Col>
@@ -25,7 +25,7 @@ return (
                     </Row>
                 </div>
         {
-        citizensList.slice(0,perPage).map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
+        citizensList.map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
         }
         <Pagination defaultCurrent={1} total={43} pageSize={5} onChange={()=>(alert('hello'))} /> 
         </div>

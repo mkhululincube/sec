@@ -49,6 +49,7 @@ readMoreText="view more"
 View Notes for {citizenItem.returnValues.name}
  </Button>
 </Col>
+<Col md={1} xs={1}></Col>
 <Col md={3} xs={0}><a target="_blank" href={ethLink}>View txHash</a> </Col>
 </Row>
 <Modal

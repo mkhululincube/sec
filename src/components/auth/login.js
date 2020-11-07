@@ -73,6 +73,7 @@ return (
 <input
         name={item.name}
         type={item.type}
+        style={{fontSize:"16px"}}
         className={styles.formText}
         ref={register({
           validate: value => value === "admin",
