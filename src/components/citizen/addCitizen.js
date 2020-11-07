@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {useForm} from 'react-hook-form';
 import { Divider, Result, Form, Button } from 'antd';
 import Loading from '../loading/loading';
 import Web3 from 'web3';
 import { CITIZENS_ADDRESS, CITIZENS_ABI } from '../../config/citizens'
 import styles from './citizen.module.css';
+import Requirements from '../requirements/requirements';
+import NoAccount from '../requirements/noAccount';
 const testnet = 'https://ropsten.etherscan.io/';
 
 const loginItems = [
@@ -52,15 +54,16 @@ const loginItems = [
 
 const AddCitizen = (props) => {
 
-const dispatch = useDispatch();
+  const web3Provider = useSelector(state=>state.Web3Provider);
 
 const [loading, setLoading] = useState(false)
 const [sucessMessage, setSucessMessage] = useState(false)
 const [showForm, setShowForm] = useState(true)
+const [noAccount, setNoAccount] = useState(false)
 
 
 const { control, register, handleSubmit, errors } = useForm();
-const ageError = errors.age && "Enter your email address";
+const ageError = errors.age && "Enter your name";
 
 
 
@@ -70,12 +73,22 @@ const onSubmit = async (data) => {
             const web3 = new Web3(Web3.givenProvider || testnet)
             const citizensList = new web3.eth.Contract(CITIZENS_ABI, CITIZENS_ADDRESS)
             const accounts = await web3.eth.getAccounts()
-            await citizensList.methods.addCitizen(age, city, name, someNote).send({ from: accounts[0] })
+
+            try {
+              await citizensList.methods.addCitizen(age, city, name, someNote).send({ from: accounts[0] })
             .once('receipt', (receipt) => {
-                setSucessMessage(true);
-                setLoading(false);
-                setShowForm(false);     
-            })
+              setSucessMessage(true);
+              setLoading(false);
+              setShowForm(false);     
+          })
+            } catch (e) {
+              setNoAccount(true);
+              setLoading(false);
+          } finally {
+              console.log('We do cleanup here');
+          }
+
+
 }      
  
 return (
@@ -84,6 +97,12 @@ return (
 {showForm ?
 <>
 <Divider>Add citizen details</Divider>
+
+{
+  noAccount && <NoAccount />
+}
+
+{ web3Provider ?
 <form  onSubmit={handleSubmit(onSubmit)}>
 { loginItems.map((item, i) =>(
  <div key={i}>
@@ -114,6 +133,10 @@ return (
 Submit
 </Button>
 </form>
+:
+<Requirements />
+}
+
 </>
 :
 null

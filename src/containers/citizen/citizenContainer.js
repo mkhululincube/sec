@@ -9,12 +9,15 @@ import { TESTNET_URL } from '../../config/config';
 
 const CitizenContainer = (props) => {
 const dispatch = useDispatch();
+const web3Provider = useSelector(state=>state.Web3Provider);
+
 const [totalCitizens, setTotalCitizens]  = useState(0); 
 const [perPage, setPerPage]  = useState(5); 
 // const [currPage, setCurrPage]  = useState(0); 
 useEffect(()=>{
 const fetchCitizens = async () => {
     const web3 = new Web3(Web3.givenProvider || TESTNET_URL)
+    //console.log("check provider", Web3.givenProvider)
     const citizensList = new web3.eth.Contract(CITIZENS_ABI, CITIZENS_ADDRESS)
     citizensList.getPastEvents(
         'AllEvents',
@@ -29,7 +32,9 @@ const fetchCitizens = async () => {
             }
       )
     }
-    fetchCitizens();
+   web3Provider && fetchCitizens()
+
+
 },[])
 
 const selector = useSelector(state=>state.Citizens);
@@ -44,6 +49,7 @@ console.log("citizens", selector[0])
 
 return (
 <>
+
 <Suspense fallback={
 <Space>
 <Spin tip="Loading...">

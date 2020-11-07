@@ -2,7 +2,8 @@ import {
     SCREEN_SIZE,
     SHOW_HEADER,
     ADMIN_LOGGED_IN,
-    CITIZENS
+    CITIZENS,
+    WEB3_PROVIDER
   } from "./actionTypes";
   
   export const ScreenSize = size => ({
@@ -23,6 +24,10 @@ import {
   export const Citizens = (citizensList) => ({
     type: CITIZENS,
     payload: citizensList
+  })  
+  export const Web3Provider = (web3Provider) => ({
+    type: WEB3_PROVIDER,
+    payload: web3Provider
   })
   
   

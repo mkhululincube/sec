@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import LogoBar from './components/header/logoBar';
 import Footer from './components/footer/footer';
 import Topbar from './components/header/topbar';
@@ -9,9 +9,18 @@ import Login from './components/auth/login';
 import AuthVerify from './containers/auth/authVerify';
 import CitizenContainer from './containers/citizen/citizenContainer';
 import CitizenDetailsContainer from './containers/citizen/citizenDetailsContainer';
+import Web3 from 'web3'
+import { Web3Provider } from './actions/actions';
+
 
 function App(props) {
+
+const dispatch = useDispatch();   
+
 const showHeaderState = useSelector(state=>state.ShowHeader);
+
+dispatch(Web3Provider(Web3.givenProvider))
+
 return (
 <Router>
 { showHeaderState ?
