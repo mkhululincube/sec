@@ -4,10 +4,8 @@ import { ScreenSize } from '../../actions/actions';
 import App from '../../App';
 
 const ScreenSizeContainer = () => {
-
     const selector = useSelector(state=>state.ScreenSize);
     const dispatch = useDispatch();
-    
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
     
@@ -22,10 +20,9 @@ const ScreenSizeContainer = () => {
     useEffect(() => {
         dispatch(ScreenSize(width));
     }, []);
-
     return (
        <App width={selector} />
-      );
+);
 };
 
 export default ScreenSizeContainer;

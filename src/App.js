@@ -7,19 +7,13 @@ import Topbar from './components/header/topbar';
 import Home from './components/home/home';
 import Login from './components/auth/login';
 import AuthVerify from './containers/auth/authVerify';
-import Logout from './components/auth/logout';
-// import AddCitizen from './components/citizen/addCitizen';
-import LearnMore from './components/pages/learnMore';
 import CitizenContainer from './containers/citizen/citizenContainer';
 import CitizenDetailsContainer from './containers/citizen/citizenDetailsContainer';
 
 function App(props) {
-
 const showHeaderState = useSelector(state=>state.ShowHeader);
-
 return (
 <Router>
-
 { showHeaderState ?
 <>
 <Topbar/>
@@ -29,28 +23,27 @@ return (
 null
 }
 
-
 <Switch>
 <Route exact path="/" component={Login} />
-<Route exact path="/logout" component={Logout} />
-<Route exact path="/learnMore" component={LearnMore} />
 
+<AuthVerify path="/citizenDetails/:citizenId">
 <Route path="/citizenDetails/:citizenId"  component={CitizenDetailsContainer} />
+</AuthVerify>
 
+<AuthVerify path="/citizens">
 <Route path="/citizens" component={CitizenContainer} />
+</AuthVerify>
+
 <AuthVerify path="/home">
 <Route path="/home"  component={Home} /> 
 </AuthVerify>
-
 </Switch>
-
 
 { showHeaderState ?
 <Footer />
 :
 null
 }
-
 </Router>
 );
 }

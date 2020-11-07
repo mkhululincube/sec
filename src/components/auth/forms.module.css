@@ -3,17 +3,14 @@
   height: 100vh;
   overflow: hidden;
 }
-
 @media (max-width:700px) {
     .loginContainer {
         background-color: #fff;  
-    }  
-    
+    }   
     .loginForm {
         margin: 10% 6% 6% 6%;
 
-    }
-    
+    }  
 
 }
 @media (min-width:700px) {
@@ -24,10 +21,8 @@
     border: 1px solid rgb(131, 129, 129);
     box-shadow: 2px 4px 2px 5px #a7a2a2;
     border-radius: 25px;
-
 }
 }
-
 .formBtn {
 border-radius: 5px;
 width: 100%;
@@ -35,7 +30,6 @@ background-color: rgb(7,106,177);
 height: 50px;
 color: #fff;
 }
-
 .formLabel {
     position: absolute;
     background-color: #ffffff;
@@ -52,7 +46,6 @@ color: #fff;
     border-radius: 5px;
     height:50px;
     padding-left: 30px;
-    font-size: 12px;
     width: 100%;
     border: 1px solid #ddd;
  }
@@ -61,12 +54,7 @@ color: #fff;
     height: 50px;
     box-shadow: 0px 0px 0 #bcd5fc;
 }
-
-.fformText:hover {
-    box-shadow: 0px 0px 30px #2E8B57;
-  }
-
-  .formLogo {
+.formLogo {
     width:50%;
     text-align:center;
     margin-bottom:35px;

@@ -1,20 +1,12 @@
 import React from 'react';
 import { motion } from "framer-motion";
-
+import { Col, Row } from 'antd';
 import style from './citizen.module.css'
 import globalstyle from '../../style.module.css'
-import { Col, Row } from 'antd';
 import AddCitizen from './addCitizen';
 import Instructions from './instructions';
 
-
-
 const Citizen = (props) => {
-
-
-
-
-//const [showAddCitizen, setShowAddCitizen] = useState(false);
 
 return (
 <div className={style.citizensContainer}>
@@ -22,10 +14,7 @@ return (
 <div className={style.citizensInnerContainer}>      
 <Row gutter={[24]}>
 <Col md={12} xs={24}>
-
 <Instructions />
-
-
 </Col>
 <Col md={12} xs={24}> 
 <motion.div

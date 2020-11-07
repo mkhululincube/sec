@@ -1,12 +1,26 @@
 import React from 'react';
-import { Col, Row, Divider, Pagination, Skeleton } from 'antd';
+import { Col, Row, Divider, Pagination } from 'antd';
 import style from './citizen.module.css'
 import CitizenItem from './citizenItem';
 import globalstyle from '../../style.module.css'
 
 const CitizenView = (props) => {
-    const citizensList = props.citizens;
+const citizensList = props.citizens;
+// const pageNumbers = props.pageNumbers;
+const totalCitizens = props.totalCitizens;
+const perPage = props.perPage;
 
+
+
+// const renderPageNumbers = pageNumbers.map(number => {
+// return (
+//      <Link to={`/${number}`}> <li key={number} id={number}>
+//         {number}
+//       </li>
+//       </Link>
+//     );
+//   });
+    
 return (
 <div className={style.citizensPageContainer}>
 <div className={globalstyle.container}>
@@ -20,19 +34,16 @@ return (
 <Col md={5} xs={5}>Age</Col>
 <Col md={5} xs={5}>City</Col>
 <Col md={5} xs={5}></Col>
-{/* <Col md={5} xs={5}>{citizenItem.returnValues.city}</Col> */}
 </Row>
  
 </div>
 {
- citizensList.map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
+ citizensList.slice(0,perPage).map((citizenItem)=>(<CitizenItem key={citizenItem.returnValues.id} citizenItem={citizenItem} />))
 }
-
-<Pagination defaultCurrent={1} total={50} /> 
+<Pagination defaultCurrent={1} total={totalCitizens} pageSize={5} onChange={()=>(alert('hello'))} /> 
 </div>
 </div>
 </div>
-
 );
 };
 

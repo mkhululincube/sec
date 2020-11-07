@@ -1,7 +1,6 @@
 import React from 'react';
 import {getSellerToken} from './getTokens';
 import {
-    BrowserRouter as Router,
     Route,
     Redirect,
   } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Divider } from 'antd';
+import { Divider } from 'antd';
 import style from './citizen.module.css'
 import globalstyle from '../../style.module.css'
 

@@ -1,5 +1,4 @@
 import { SCREEN_SIZE, SHOW_HEADER } from '../actions/actionTypes';
-
 export const ScreenSize = (state=[], action) => {
   switch (action.type) {
     case SCREEN_SIZE:
@@ -8,7 +7,6 @@ export const ScreenSize = (state=[], action) => {
     return state
   }
 }
-
 export const ShowHeader = (state=[], action) => {
   switch (action.type) {
     case SHOW_HEADER:

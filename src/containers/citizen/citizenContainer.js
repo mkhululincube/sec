@@ -1,7 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spin, Alert, Space } from 'antd';
-
 import Web3 from 'web3'
 import { Citizens } from '../../actions/actions';
 import CitizenView from '../../components/citizen/citizenView';
@@ -9,20 +8,14 @@ import { CITIZENS_ADDRESS, CITIZENS_ABI } from '../../config/citizens'
 import { TESTNET_URL } from '../../config/config';
 
 const CitizenContainer = (props) => {
-
 const dispatch = useDispatch();
-   
-const [citizenNotes, setCitizenNotes]  = useState({}); 
 const [totalCitizens, setTotalCitizens]  = useState(0); 
 const [perPage, setPerPage]  = useState(5); 
-const [currPage, setCurrPage]  = useState(0); 
-
+// const [currPage, setCurrPage]  = useState(0); 
 useEffect(()=>{
-
 const fetchCitizens = async () => {
     const web3 = new Web3(Web3.givenProvider || TESTNET_URL)
     const citizensList = new web3.eth.Contract(CITIZENS_ABI, CITIZENS_ADDRESS)
-    
     citizensList.getPastEvents(
         'AllEvents',
         {
@@ -31,43 +24,23 @@ const fetchCitizens = async () => {
           toBlock: 'latest'
         },
         (err, citizens) => {
-            // setCitizensList(citizens)
             dispatch(Citizens(citizens));
             setTotalCitizens(citizens)
             }
       )
     }
     fetchCitizens();
-
 },[])
 
-
 const selector = useSelector(state=>state.Citizens);
-  
 console.log(selector.length/5 )
 console.log(totalCitizens.length)
-
-
 console.log("citizens", selector[0])
-console.log("citizenDetails", citizenNotes)
 
-
-const pageNumbers = [];
-for (let i = 1; i <= Math.ceil(totalCitizens.length / perPage); i++) {
-  pageNumbers.push(i);
-}
-
-const renderPageNumbers = pageNumbers.map(number => {
-    return (
-      <li
-        key={number}
-        id={number}
-      
-      >
-        {number}
-      </li>
-    );
-  });
+// const pageNumbers = [];
+// for (let i = 1; i <= Math.ceil(totalCitizens.length / perPage); i++) {
+//   pageNumbers.push(i);
+// }
 
 return (
 <>
@@ -81,13 +54,8 @@ return (
     />
   </Spin>
 </Space>}>
-<CitizenView citizens={selector}  />
-
+<CitizenView perPage={perPage} totalCitizens={totalCitizens} citizens={selector}  />
 </Suspense>  
-
-<ul id="page-numbers">
-          {renderPageNumbers}
-        </ul>
 </>
 );
 };

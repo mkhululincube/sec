@@ -1,16 +1,14 @@
 import React from 'react';
 import { motion } from "framer-motion";
-
 import style from './citizen.module.css';
 import { InfoCircleFilled } from '@ant-design/icons';
 
 const Instruction = () => {
-    return (
-        <div>
-
-            <div className={style.instructionHeader}>
-                Usage Instuctions <InfoCircleFilled />
-            </div>
+return (
+<div>
+<div className={style.instructionHeader}>
+                <span>Usage Instuctions</span> <InfoCircleFilled />
+</div>
 
  
 
@@ -68,7 +66,7 @@ const Instruction = () => {
             <span>Step 3: Get free coins</span>  <p>Visit <a href="https://faucet.metamask.io/">https://faucet.metamask.io/</a> to get free tokens</p>
             </div>
             </motion.div>
-        </div>
+</div>
     );
 };
 

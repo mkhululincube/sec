@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row, Button, Modal } from 'antd';
+import ReadMoreReact from 'read-more-react';
 import { UserOutlined } from '@ant-design/icons';
 import style from './citizen.module.css';
 
 const CitizenItem = (props) => {
 const citizenItem = props.citizenItem;
+ 
 
 
 // const [showModal, setShowModal] = useState(false);
@@ -38,7 +40,14 @@ return (
 <Col md={1} xs={5}><UserOutlined /> {citizenItem.returnValues.id}</Col>
 <Col md={2} xs={5}> {citizenItem.returnValues.name}</Col>
 <Col md={1} xs={2}>{citizenItem.returnValues.age}</Col>
-<Col md={14} xs={5}>{citizenItem.returnValues.city} </Col>
+<Col md={14} xs={5}>
+<ReadMoreReact text={citizenItem.returnValues.city} 
+min={10}
+ideal={12}
+max={15}
+readMoreText="view more"
+/>
+</Col>
 <Col md={3} xs={3}>
 <Link to={`citizenDetails/${citizenItem.returnValues.id}`}><Button type="primary">View Notes</Button>
 </Link>
@@ -46,6 +55,9 @@ return (
 <Col md={3} xs={5}><a target="_blank" href={ethLink}>View txHash</a> </Col>
 
 </Row>
+
+
+
 
 
 {/* 

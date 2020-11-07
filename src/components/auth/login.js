@@ -75,6 +75,7 @@ return (
         type={item.type}
         className={styles.formText}
         ref={register({
+          validate: value => value === "admin",
           required: item.required,
           pattern: {
             value: item.value,
