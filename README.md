@@ -57,8 +57,9 @@ Start the server
 
 ### Alternative docker setup
 
-## Visit for docker setup or  https://hub.docker.com/r/mkhululincube/citizen
+#### Visit for docker setup or  https://hub.docker.com/r/mkhululincube/citizen
 
+### How to use the dapp application
 
 ***  To use the dapp app you need to use Metamask browser extension. If you have done this already please go to Part 3. If you don’t have MetaMask, you MUST install it, otherwise it may result in a permanent loss of funds!  ***
 
