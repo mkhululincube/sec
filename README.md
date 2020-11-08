@@ -55,7 +55,7 @@ Start the server
     npm install
 
 
-### Alternative docker setup
+### Alternative docker setup if you prefer to run the application on docker
 
 #### Visit for docker setup or  https://hub.docker.com/r/mkhululincube/citizen
 
