@@ -50,6 +50,10 @@ Download the dependencies
 
     npm install
 
+Start the server
+
+    npm install
+
 
 ### Alternative docker setup
 
@@ -102,7 +106,7 @@ Action is also fired/initiated to store authentication state is global storage.
 
 ### Home page
 
-### Dispatch action to check if metamask is configured
+### Dispatch action to  to set web3 config 
 
     dispatch(Web3Provider(Web3.givenProvider))
 
@@ -241,10 +245,10 @@ Heroku is linked to application codebase on github repo https://github.com/mkhul
 
 ## Email sent to registered account
 
-![alt text](images.githubusercontent.com/16665636/98450742-ae4c3280-2158-11eb-91b4-fcae0c68f510.png)
+![alt text](https://user-images.githubusercontent.com/16665636/98458027-d8781180-21a5-11eb-95d5-817f47411efa.png)
 
 
-## If automated tests pass deployment passes
+## If automated tests pass deployment also passes
 
 ![alt text](https://user-images.githubusercontent.com/16665636/98450839-90cb9880-2159-11eb-91fd-a6eac6b064dd.png)
 
