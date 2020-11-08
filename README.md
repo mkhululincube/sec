@@ -1,14 +1,12 @@
 ## Citizen Dapp -  Powered by Ethereum
 
-Demo URL : https://securrency-int.herokuapp.com/
+Demo Application link: (username: admin password: admin ): https://securrency-int.herokuapp.com/
 
 Dockerhub Repository link https://hub.docker.com/r/mkhululincube/citizen
 
 Demo video link: https://youtu.be/jH4O_ThxG_Y
 
 Invision Mockups link: https://mkhululincube15742.invisionapp.com/console/share/J31RMGLUVR
-
-Demo Application link: (username: admin password: admin ): https://securrency-int.herokuapp.com/
 
 Spec document https://docs.google.com/presentation/d/1YKTXaAWgpW-XF5aWvEJNHvg76w-H-PxlUxGpPpMKkfw/edit?usp=sharing
 
